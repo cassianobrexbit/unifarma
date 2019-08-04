@@ -32,7 +32,7 @@ class ReportsController extends Controller
 
     $medicine_items  = DB::table('medicine_items')->where('available_status','Executado')->get();
 
-    return view('reports/medicineItemsExecuted',compact('medicine_items'));
+    return view('reports.medicineItemsExecuted',compact('medicine_items'));
   }
 
   public function medicineItemsExpiringIn30Days()
@@ -40,7 +40,7 @@ class ReportsController extends Controller
 
     $medicine_items  = DB::table('medicine_items')->where('val_date', '<', Carbon::now()->subDays(30))->get();
 
-    return view('reports/medicineItemsExpiring',compact('medicine_items'));
+    return view('reports.medicineItemsExpiring',compact('medicine_items'));
   }
 
   public function medicalRequestsExpiringIn30Days()

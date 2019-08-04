@@ -64,9 +64,9 @@ Route::post('meditemstore', 'MedicineItemController@store')->name('meditemstore'
 //relatorios
 
 Route::get('/reports/index', 'ReportsController@index')->name('reports/index');
-Route::get('/reports/medicinesByStatus', 'ReportsController@medicinesIndexByStatus')->name('reports/medicineByStatus');
-Route::get('/reports/medicinesExecuted', 'ReportsController@medicinesExecuted')->name('reports/medicinesExecuted');
-Route::get('/reports/medicinesExpiring', 'ReportsController@medicinesExpiringIn30Days')->name('reports/medicinesExpiring');
+Route::get('/reports/medicineItemsByStatus', 'ReportsController@medicineItemsIndexByStatus')->name('reports/medicineItemsByStatus');
+Route::get('/reports/medicineItemsExecuted', 'ReportsController@medicineItemsExecuted')->name('reports/medicinesItemExecuted');
+Route::get('/reports/medicineItemsExpiring', 'ReportsController@medicineItemsExpiringIn30Days')->name('reports/medicinesItemsExpiring');
 Route::get('/reports/medicalRequestsExpiring', 'ReportsController@medicalRequestsExpiringIn30Days')->name('reports/medicalRequestsExpiring');
 Route::get('/reports/medicalRequestsCanceled', 'ReportsController@medicalRequestsCanceled')->name('reports/medicalRequestsCanceled');
 Route::get('/reports/medicalRequestsExecuted', 'ReportsController@medicalRequestsExecuted')->name('reports/medicalRequestsExecuted');

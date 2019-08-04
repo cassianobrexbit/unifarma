@@ -8,27 +8,27 @@
                 <div class="card-header">{{ __('Lista de Guias Canceladas') }}
 
                 </div>
-                    <table class="table">
+                <table class="table">
+                    <tr>
+                        <th>Número de Registro</th>
+                        <th>Nome do Beneficiário</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Celular</th>
+                        <th>Status da Guia</th>
+                    </tr>
+                        @foreach($medical_requests as $item)
                         <tr>
-                            <th>Número de Registro</th>
-                            <th>Nome do Beneficiário</th>
-                            <th>Email</th>
-                            <th>Telefone</th>
-                            <th>Celular</th>
-                            <th>Status da Guia</th>
-                        </tr>
-                            @foreach($medical_requests as $item)
-                            <tr>
-                                <td>{{ $item->reg_number }}</td>
-                                <td>{{ $item->client_name }}</td>
-                                <td>{{ $item->client_email }}</td>
-                                <td>{{ $item->client_phone }}</td>
-                                <td>{{ $item->client_cellphone }}</td>
-                                <td>{{ $item->status}}</td>
+                            <td>{{ $item->reg_number }}</td>
+                            <td>{{ $item->client_name }}</td>
+                            <td>{{ $item->client_email }}</td>
+                            <td>{{ $item->client_phone }}</td>
+                            <td>{{ $item->client_cellphone }}</td>
+                            <td>{{ $item->status}}</td>
 
-                            </tr>
-                            @endforeach
-                    </table>
+                        </tr>
+                        @endforeach
+                </table>
                 </div>
             </div>
         </div>

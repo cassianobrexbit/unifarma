@@ -11,15 +11,15 @@
                     <table class="table">
                       <tr>
                           <th>Medicamentos aguardando Execução</th>
-                          <td><a href="{{ url('reports/medicinesByStatus') }}">Ver Relatório</a></td>
+                          <td><a href="{{ url('reports/medicineItemsByStatus') }}">Ver Relatório</a></td>
                       </tr>
                       <tr>
                           <th>Medicamentos Executados</th>
-                          <td><a href="{{ url('reports/medicinesExecuted') }}">Ver Relatório</a></td>
+                          <td><a href="{{ url('reports/medicineItemsExecuted') }}">Ver Relatório</a></td>
                       </tr>
                       <tr>
                           <th>Medicamentos Expirando em 30dias</th>
-                          <td><a href="{{ url('reports/medicinesExpiring') }}">Ver Relatório</a></td>
+                          <td><a href="{{ url('reports/medicineItemsExpiring') }}">Ver Relatório</a></td>
                       </tr>
                       <tr>
                           <th>Guias Expirando em 30dias</th>
