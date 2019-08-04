@@ -12,5 +12,20 @@ class Medicine extends Model
     'active_principle',
     'is_generic',
     'min_frac_unity',
+    'frac_qtd',
+    'available_status',
+    'valid_status',
+    'quantity',
+    'is_frac'
   ];
+
+  public function operations()
+  {
+      return $this->hasMany('App\Operation');
+  }
+
+  public function medRequests()
+  {
+      return $this->belongsToMany('App\MedicalRequest');
+  }
 }

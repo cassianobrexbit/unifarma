@@ -16,10 +16,16 @@ class MaterialController extends Controller
     */
     public function import()
     {
-       return view('importMaterial');
+       return view('material.import');
     }
 
+    public function index(){
 
+      $materials = Material::all();
+
+      return view('material/index',array('materials' => $materials));
+
+    }
 
     /**
     * @return \Illuminate\Support\Collection

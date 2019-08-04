@@ -19,7 +19,12 @@ class CreateMaterialsTable extends Migration
             $table->string('commercial_name');
             $table->text('description');
             $table->string('specialty');
+            $table->double('quantity')->default(0);
+            $table->string('is_frac')->default('No');
             $table->string('min_frac_unity');
+            $table->string('available_status')->nullable();
+            $table->string('valid_status')->nullable();
+            $table->date('val_date')->nullable();
             $table->timestamps();
         });
     }

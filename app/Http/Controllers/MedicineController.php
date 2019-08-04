@@ -16,9 +16,26 @@ class MedicineController extends Controller
     */
     public function import()
     {
-       return view('import');
+       return view('medicine.import');
     }
 
+    
+
+    public function index(){
+
+      $medicines = Medicine::all();
+
+      return view('medicine/index',array('medicines' => $medicines));
+
+    }
+
+    public function nfeIndex(){
+
+      $nfes = NFE::all();
+
+      return view('medicine/nfeindex',array('nfes' => $nfes));
+
+    }
 
 
     /**
