@@ -18,8 +18,9 @@ class MedicineItemController extends Controller
     public function index()
     {
 
+        $medicine_items = MedicineItem::all();
 
-        return view('meditems/index');
+        return view('meditems/index', compact('medicine_items'));
     }
 
     /**

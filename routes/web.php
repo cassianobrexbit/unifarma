@@ -60,6 +60,7 @@ Route::get('/medicalRequest/show/{id}', 'MedicalRequestController@show')->name('
 //Items medicamento
 Route::get('meditems/create', 'MedicineItemController@create')->name('meditems.create');
 Route::post('meditemstore', 'MedicineItemController@store')->name('meditemstore');
+Route::get('meditems/index', 'MedicineItemController@index')->name('meditems.index');
 
 //relatorios
 
