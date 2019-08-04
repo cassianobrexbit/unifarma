@@ -24,7 +24,7 @@ class CreateNFESTable extends Migration
             $table->bigInteger('serie');
             $table->bigInteger('nNF');
             $table->string('dhEmi');
-            $table->string('dhSaiEnt');
+            $table->string('dhSaiEnt')->nullable();
             $table->bigInteger('tpNF');
             $table->bigInteger('idDest');
             $table->string('cMunFG');

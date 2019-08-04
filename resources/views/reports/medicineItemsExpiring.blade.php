@@ -18,7 +18,7 @@
                     </tr>
                         @foreach($medicine_items as $item)
                         <tr>
-                            <td>{{ $item->medicine_id }}</td>
+                            <td>{{ \App\Medicine::where(['id' => $item->medicine_id])->pluck('commercial_name')->first() }}</td>
                             <td>{{ $item->val_date }}</td>
                             <td>{{ $item->num_batch }}</td>
                             <td>{{ $item->nf_number }}</td>

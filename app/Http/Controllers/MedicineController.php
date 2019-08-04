@@ -94,7 +94,7 @@ class MedicineController extends Controller
             'serie' =>  $nfec['infNFe'][0]['serie'],
             'nNF' =>  $nfec['infNFe'][0]['nNF'],
             'dhEmi' => $nfec['infNFe'][0]['dhEmi'],
-            'dhSaiEnt' => $nfec['infNFe'][0]['dhSaiEnt'],
+            //'dhSaiEnt' => $nfec['infNFe'][0]['dhSaiEnt'],
             'tpNF' => $nfec['infNFe'][0]['tpNF'],
             'idDest' => $nfec['infNFe'][0]['idDest'],
             'cMunFG' => $nfec['infNFe'][0]['cMunFG'],
