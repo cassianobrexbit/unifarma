@@ -13,21 +13,12 @@ class Medicine extends Model
     'is_generic',
     'min_frac_unity',
     'frac_qtd',
-    'available_status',
-    'valid_status',
     'quantity',
     'is_frac',
-    'val_date',
-    'num_batch'
   ];
 
-  public function operations()
+  public function items()
   {
-      return $this->hasMany('App\Operation');
-  }
-
-  public function medRequests()
-  {
-      return $this->belongsToMany('App\MedicalRequest');
+      return $this->hasMany('App\MedicineItem');
   }
 }

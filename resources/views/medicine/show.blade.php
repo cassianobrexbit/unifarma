@@ -33,7 +33,7 @@
                   <td>{{ $medicine->is_frac  }}
                 </tr>
                 <tr>
-                    <th>Disponibilidade</th>
+                    <th>Status de Disponibilidade</th>
                     <td> {{ $medicine->available_status }} </td>
                 </tr>
                 <tr>

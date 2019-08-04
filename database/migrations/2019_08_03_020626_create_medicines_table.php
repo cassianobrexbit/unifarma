@@ -23,10 +23,7 @@ class CreateMedicinesTable extends Migration
             $table->double('frac_qtd')->default(0);
             $table->string('is_frac')->default('N');
             $table->string('min_frac_unity');
-            $table->string('num_batch')->nullable();
-            $table->string('available_status')->default('Pendente');
-            $table->string('valid_status')->nullable();
-            $table->date('val_date')->nullable();
+
             $table->timestamps();
         });
     }

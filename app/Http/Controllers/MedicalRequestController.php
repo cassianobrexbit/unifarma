@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\MedicalRequest;
-use App\Medicine;
-use App\Material;
+use App\MedicineItem;
+use App\MaterialItem;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -51,23 +51,23 @@ class MedicalRequestController extends Controller
 
         //Medicamento
 
-        $medicine = Medicine::find([3, 4]);
+        $medicine = MedicineItem::find([1, 2]);
 
-        $medobj =  Medicine::findOrFail($medicine[0]['id']);
-        $medobj2 =  Medicine::findOrFail($medicine[1]['id']);
+        $medobj =  MedicineItem::findOrFail($medicine[0]['id']);
+        $medobj2 =  MedicineItem::findOrFail($medicine[1]['id']);
 
         $medobj->available_status = "Transito";
         $medobj2->available_status = "Transito";
 
         $medobj->save();
         $medobj2->save();
+/*
+        //MaterialItem
 
-        //Material
+        $material = MaterialItem::find([1, 2]);
 
-        $material = Material::find([1, 2]);
-
-        $matobj =  Material::findOrFail($material[0]['id']);
-        $matobj2 =  Material::findOrFail($material[1]['id']);
+        $matobj =  MaterialItem::findOrFail($material[0]['id']);
+        $matobj2 =  MaterialItem::findOrFail($material[1]['id']);
 
         $matobj->available_status = "Transito";
         $matobj2->available_status = "Transito";
@@ -76,9 +76,9 @@ class MedicalRequestController extends Controller
         $matobj2->save();
 
         //Attach
-
+*/
         $medrequest->medicines()->attach($medicine);
-        $medrequest->materials()->attach($material);
+  //      $medrequest->materials()->attach($material);
 
         return redirect('medicalRequest/index');
 
@@ -122,11 +122,11 @@ class MedicalRequestController extends Controller
         $mrequest = MedicalRequest::findOrFail($id);
 
         //dd($mrequest->medicines[0]['id']);
-        $medobj =  Medicine::findOrFail($mrequest->medicines[0]['id']);
-        $medobj2 =  Medicine::findOrFail($mrequest->medicines[1]['id']);
+        $medobj =  MedicineItem::findOrFail($mrequest->medicines[0]['id']);
+        $medobj2 =  MedicineItem::findOrFail($mrequest->medicines[1]['id']);
 
-        $matobj =  Material::findOrFail($mrequest->materials[0]['id']);
-        $matobj2 =  Material::findOrFail($mrequest->materials[1]['id']);
+        $matobj =  MaterialItem::findOrFail($mrequest->materials[0]['id']);
+        $matobj2 =  MaterialItem::findOrFail($mrequest->materials[1]['id']);
 
         //dd($matobj2->available_status);
 

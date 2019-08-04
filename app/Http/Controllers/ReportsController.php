@@ -18,29 +18,29 @@ class ReportsController extends Controller
     return view('reports.index');
   }
 
-  public function medicinesIndexByStatus()
+  public function medicineItemsIndexByStatus()
   {
 
-    $medicines  = DB::table('medicines')->where('available_status','Transito')->get();
+    $medicine_items  = DB::table('medicine_items')->where('available_status','Transito')->get();
 
 
-    return view('reports.medicineByStatus',compact('medicines'));
+    return view('reports.medicineItemsByStatus',compact('medicine_items'));
   }
 
-  public function medicinesExecuted()
+  public function medicineItemsExecuted()
   {
 
-    $medicines  = DB::table('medicines')->where('available_status','Executado')->get();
+    $medicine_items  = DB::table('medicine_items')->where('available_status','Executado')->get();
 
-    return view('reports/medicinesExecuted',compact('medicines'));
+    return view('reports/medicineItemsExecuted',compact('medicine_items'));
   }
 
-  public function medicinesExpiringIn30Days()
+  public function medicineItemsExpiringIn30Days()
   {
 
-    $medicines  = DB::table('medicines')->where('val_date', '<', Carbon::now()->subDays(30))->get();
+    $medicine_items  = DB::table('medicine_items')->where('val_date', '<', Carbon::now()->subDays(30))->get();
 
-    return view('reports/medicinesExpiring',compact('medicines'));
+    return view('reports/medicineItemsExpiring',compact('medicine_items'));
   }
 
   public function medicalRequestsExpiringIn30Days()

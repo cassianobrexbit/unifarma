@@ -13,20 +13,11 @@ class Material extends Model
     'specialty',
     'min_frac_unity',
     'is_frac',
-    'available_status',
     'frac_qtd',
-    'valid_status',
-    'quantity',
-    'val_date'
   ];
 
-  public function operations()
+  public function items()
   {
-      return $this->hasMany('App\Operation');
-  }
-
-  public function medRequests()
-  {
-      return $this->belongsToMany('App\MedicalRequest');
+      return $this->hasMany('App\MaterialItem');
   }
 }

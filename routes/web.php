@@ -56,6 +56,11 @@ Route::resource('medicalRequest','MedicalRequestController');
 Route::post('mreqstore', 'MedicalRequestController@store')->name('mreqstore');
 Route::get('/medicalRequest/show/{id}', 'MedicalRequestController@show')->name('mreqstore.show');
 
+
+//Items medicamento
+Route::get('meditems/create', 'MedicineItemController@create')->name('meditems.create');
+Route::post('meditemstore', 'MedicineItemController@store')->name('meditemstore');
+
 //relatorios
 
 Route::get('/reports/index', 'ReportsController@index')->name('reports/index');
