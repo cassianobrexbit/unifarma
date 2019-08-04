@@ -61,7 +61,7 @@ class MedicalRequestController extends Controller
 
         $medobj->save();
         $medobj2->save();
-/*
+
         //MaterialItem
 
         $material = MaterialItem::find([1, 2]);
@@ -76,7 +76,7 @@ class MedicalRequestController extends Controller
         $matobj2->save();
 
         //Attach
-*/
+
         $medrequest->medicines()->attach($medicine);
   //      $medrequest->materials()->attach($material);
 

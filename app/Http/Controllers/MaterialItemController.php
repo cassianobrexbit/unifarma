@@ -14,7 +14,7 @@ class MaterialItemController extends Controller
      */
     public function index()
     {
-        //
+        return view('matitems/index');
     }
 
     /**
@@ -24,7 +24,11 @@ class MaterialItemController extends Controller
      */
     public function create()
     {
-        //
+      $materials = Material::pluck('commercial_name','id');
+
+      $nfes = NFE::pluck('xprod','id');
+
+      return view('matitems.create', compact('materials','nfes'));
     }
 
     /**
@@ -35,7 +39,25 @@ class MaterialItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $matitem = new MedicineItem($request->all());
+
+      $matitem->valid_status = "S";
+      $matitem->available_status = "Disponivel";
+
+      $material = Material::findOrFail($request->materials);
+
+      //$material = DB::table('materials')->where('id', '==' ,$request->materials)->get();
+
+      $nfe = NFE::findOrFail($request->nfes);
+      //dd($nfe);
+
+      $matitem->material_id = $request->materials;
+
+      $matitem->nf_number = $nfe->nfID;
+
+      $matitem->save();
+
+      dd($matitem);
     }
 
     /**
