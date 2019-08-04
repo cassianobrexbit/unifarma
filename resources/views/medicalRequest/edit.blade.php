@@ -58,7 +58,23 @@
                     @endforeach
                   </td>
                 </tr>
+                <br/>
+                @if($mrequest->status == "Pendente")
+                <tr>
+                  <th>Atualizar Guia</th>
+                  <td>
+                    <form method="POST" action="{{ route('medicalRequest.update',$mrequest->id) }}">
+                        @csrf
+                        @method('PUT')
+                        {!! Form::select('status', array('Executada' => 'Executada', 'Cancelada' => 'Cancelada'), null, ['placeholder' => 'Seleciono o Status da GUIA', 'class' => 'filestyle']) !!}
 
+                        <button type="submit" class="btn btn-success">
+                            {{ __('Cadastrar') }}
+                        </button>
+                    </form>
+                  </td>
+                </tr>
+                @endif
               </table>
             </div>
         </div>

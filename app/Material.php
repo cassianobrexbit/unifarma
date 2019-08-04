@@ -12,11 +12,12 @@ class Material extends Model
     'description',
     'specialty',
     'min_frac_unity',
+    'is_frac',
     'available_status',
     'frac_qtd',
     'valid_status',
     'quantity',
-    'is_frac'
+    'val_date'
   ];
 
   public function operations()

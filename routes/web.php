@@ -24,6 +24,7 @@ Route::get('import', 'MedicineController@import')->name('import');
 Route::post('insertExcel', 'MedicineController@insertExcel')->name('insertExcel');
 
 Route::get('medicine/index','MedicineController@index')->name('medicine/index');
+Route::get('/medicine/show/{id}', 'MedicineController@show')->name('medicine.show');
 
 Route::get('medicine/nfeindex','MedicineController@nfeIndex')->name('medicine/nfeindex');
 
@@ -32,6 +33,7 @@ Route::post('insertXML', 'MedicineController@insertXML')->name('insertXML');
 
 //Material
 Route::get('importMaterial', 'MaterialController@import')->name('importMaterial');
+Route::get('/material/show/{id}', 'MaterialController@show')->name('material.show');
 
 Route::get('material/index', 'MaterialController@index')->name('material/index');
 
@@ -45,14 +47,11 @@ Route::post('opstore', 'OperationController@store')->name('opstore');
 
 Route::get('medicalRequest/create', 'MedicalRequestController@create')->name('medicalRequest/create');
 Route::get('medicalRequest/index', 'MedicalRequestController@index')->name('medicalRequest/index');
+
+Route::get('medicalRequest/edit/{id}', 'MedicalRequestController@edit')->name('medicalRequest/edit');
+
+Route::patch('mrequpdate/{id}', 'MedicalRequestController@update')->name('mrequpdate');
+Route::resource('medicalRequest','MedicalRequestController');
+
 Route::post('mreqstore', 'MedicalRequestController@store')->name('mreqstore');
 Route::get('/medicalRequest/show/{id}', 'MedicalRequestController@show')->name('mreqstore.show');
-/*
-Route::any('/search',function(){
-    $q = Input::get ( 'q' );
-    $medicine = Medicine::where('tiss_code','LIKE','%'.$q.'%')->orWhere('commercial_name','LIKE','%'.$q.'%')->get();
-    if(count($medicine) > 0)
-        return view('welcome')->withDetails($user)->withQuery ( $q );
-    else return view ('welcome')->withMessage('No Details found. Try to search again !');
-});
-*/

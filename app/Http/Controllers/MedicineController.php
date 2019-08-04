@@ -19,7 +19,7 @@ class MedicineController extends Controller
        return view('medicine.import');
     }
 
-    
+
 
     public function index(){
 
@@ -61,6 +61,13 @@ class MedicineController extends Controller
         }
 
         return back();
+    }
+
+    public function show($id)
+    {
+        $medicine = Medicine::findOrFail($id);
+
+        return view('medicine.show', compact('medicine'));
     }
 
 

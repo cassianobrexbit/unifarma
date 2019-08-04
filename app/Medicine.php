@@ -16,7 +16,8 @@ class Medicine extends Model
     'available_status',
     'valid_status',
     'quantity',
-    'is_frac'
+    'is_frac',
+    'val_date'
   ];
 
   public function operations()
