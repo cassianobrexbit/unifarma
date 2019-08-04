@@ -17,7 +17,8 @@ class Medicine extends Model
     'valid_status',
     'quantity',
     'is_frac',
-    'val_date'
+    'val_date',
+    'num_batch'
   ];
 
   public function operations()

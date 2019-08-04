@@ -55,3 +55,14 @@ Route::resource('medicalRequest','MedicalRequestController');
 
 Route::post('mreqstore', 'MedicalRequestController@store')->name('mreqstore');
 Route::get('/medicalRequest/show/{id}', 'MedicalRequestController@show')->name('mreqstore.show');
+
+//relatorios
+
+Route::get('/reports/index', 'ReportsController@index')->name('reports/index');
+Route::get('/reports/medicinesByStatus', 'ReportsController@medicinesIndexByStatus')->name('reports/medicineByStatus');
+Route::get('/reports/medicinesExecuted', 'ReportsController@medicinesExecuted')->name('reports/medicinesExecuted');
+Route::get('/reports/medicinesExpiring', 'ReportsController@medicinesExpiringIn30Days')->name('reports/medicinesExpiring');
+Route::get('/reports/medicalRequestsExpiring', 'ReportsController@medicalRequestsExpiringIn30Days')->name('reports/medicalRequestsExpiring');
+Route::get('/reports/medicalRequestsCanceled', 'ReportsController@medicalRequestsCanceled')->name('reports/medicalRequestsCanceled');
+Route::get('/reports/medicalRequestsExecuted', 'ReportsController@medicalRequestsExecuted')->name('reports/medicalRequestsExecuted');
+Route::get('/reports/medicalRequestsExpired', 'ReportsController@medicalRequestsExpired')->name('reports/medicalRequestsExpired');
